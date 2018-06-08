@@ -14,6 +14,9 @@ import static org.junit.Assert.assertNotNull;
 
 
 /**
+ * <P>
+ *
+ * </P>
  * Created by gengqing on 6/7/2018
  **/
 public class SwaggerTest {
