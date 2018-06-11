@@ -6,6 +6,7 @@ import io.swagger.models.Model;
 import io.swagger.models.Swagger;
 import pers.gengq.code.generator.freemarker.Freemarker;
 import pers.gengq.code.generator.swagger.SwaggerFactory;
+import pers.gengq.code.generator.swagger.model.PropertiesConvertor;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -56,7 +57,7 @@ public class Generator {
         root.put("date", LocalDate.now());
         root.put("modelDescription", model.getDescription());
         root.put("modelName", s);
-        root.put("properties", model.getProperties());
+        root.put("properties", PropertiesConvertor.convert(model.getProperties()));
         return root;
     }
 }

@@ -14,8 +14,6 @@ import static org.junit.Assert.assertNotNull;
 
 
 /**
- * <P>
- *
  * </P>
  * Created by gengqing on 6/7/2018
  **/
@@ -35,9 +33,12 @@ public class SwaggerTest {
     }
 
     public void println(String s, Model model) {
-        System.out.println(s + " property--------------");
+        System.out.println(s + " : ");
         Map<String, Property> propertyMap = model.getProperties();
-        propertyMap.forEach((s1, property) -> System.out.println(s1 + " : " + property.getType()));
+        propertyMap.forEach((s1, property) -> {
+            System.out.println(" " + s1 + " : " + property.getType() + " : " + property.getClass().getSimpleName());
+            property.getVendorExtensions().forEach((s2, o) -> System.out.println("--" + s2 + " : " + o));
+        });
     }
 
 }

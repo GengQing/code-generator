@@ -1,6 +1,7 @@
 package ${package};
 
 import lombok.*;
+import java.util.List;
 
 /**
 <#if modelDescription??>
@@ -13,8 +14,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ${modelName} {
-<#list properties?keys as name>
-    private ${properties[name].type} ${name};
+<#list properties as p>
+    private ${p.type} ${p.name};
 </#list>
 
 
